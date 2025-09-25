@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+        .captcha-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007cba;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #005a87;
+        }
+        .captcha-text {
+            font-family: monospace;
+            font-size: 20px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #999;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="captcha-container">
+        <h2>Security Verification</h2>
+        <p>Please enter the text shown below to continue:</p>
+        
+        <div class="captcha-text">7K9M2X</div>
+        
+        <form onsubmit="validateCaptcha(event)">
+            <input type="text" id="captchaInput" placeholder="Enter CAPTCHA text" required>
+            <button type="submit">Verify</button>
+        </form>
+    </div>
+
+    <script>
+        function validateCaptcha(event) {
+            event.preventDefault();
+            const input = document.getElementById('captchaInput').value.toUpperCase();
+            const correctCaptcha = '7K9M2X';
+            
+            if (input === correctCaptcha) {
+                // Redirect to login page
+                window.location.href = 'login.html';
+            } else {
+                alert('CAPTCHA text is incorrect. Please try again.');
+                document.getElementById('captchaInput').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
