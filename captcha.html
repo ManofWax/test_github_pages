@@ -57,23 +57,14 @@
         
         <form onsubmit="validateCaptcha(event)">
             <input type="text" id="captchaInput" placeholder="Enter CAPTCHA text" required>
-            <button type="submit">Verify</button>
+            <button type="submit">random text</button>
         </form>
     </div>
 
     <script>
         function validateCaptcha(event) {
             event.preventDefault();
-            const input = document.getElementById('captchaInput').value.toUpperCase();
-            const correctCaptcha = '7K9M2X';
-            
-            if (input === correctCaptcha) {
-                // Redirect to login page
-                window.location.href = 'login.html';
-            } else {
-                alert('CAPTCHA text is incorrect. Please try again.');
-                document.getElementById('captchaInput').value = '';
-            }
+            window.location.href = 'login.html';
         }
     </script>
 </body>
