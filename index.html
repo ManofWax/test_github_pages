@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 400px; margin: 50px auto; }
+        input, button { margin: 10px 0; padding: 8px; width: 100%; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div id="captcha-form">
+        <h2>Verification Required</h2>
+        <form id="captcha">
+            <label for="captcha-input">Enter CAPTCHA:</label>
+            <input type="text" id="captcha-input" name="captcha" required>
+            <button type="submit">Verify</button>
+        </form>
+    </div>
+
+    <div id="login-form" class="hidden">
+        <h2>Login</h2>
+        <form id="login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('captcha').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide captcha form and show login form
+            document.getElementById('captcha-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+        });
+
+        document.getElementById('login').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login form submitted!');
+        });
+    </script>
+</body>
+</html>
