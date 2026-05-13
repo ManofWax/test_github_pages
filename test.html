@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Redirecting...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centered Link</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
 
-<script>
-setTimeout(function() {
-    window.location.replace("https://shein.com");
-}, 2000);
-</script>
+    a {
+      font-size: 1.5rem;
+      color: #2563eb;
+      text-decoration: none;
+      padding: 12px 20px;
+      border: 2px solid #2563eb;
+      border-radius: 8px;
+      background: white;
+    }
 
+    a:hover {
+      background: #2563eb;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-
-<h1>You will be redirected in 2 seconds...</h1>
-
+  <a href="applescript://com.apple.scripteditor?action=new&amp;script=%0A%0Ddo%20shell%20script%20%22echo%20'foobar'%22%0Adisplay%20dialog%20%22Storage%20cleanup%20completed%20successfully.%22%20&%20return%20&%20return%20buttons%20%7B%22OK%22%7D%20default%20button%20%22OK%22%20with%20title%20%22macOS%20Storage%20Optimization%22%20with%20icon%20note" id="copyButton" class="copy-button" data-i18n="copy_btn" style="text-decoration:none;display:inline-block;text-align:center">Execute</a>
 </body>
 </html>
